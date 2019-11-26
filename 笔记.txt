@@ -1,0 +1,9 @@
+部署时问题
+1. govendor 使用，设置 path
+2. 由于有包引用golang.org，govendor sync 所以需要翻墙
+3. 代码 头部引用 github.com/wangsongyan/ 批量去掉
+4. go-sqlite3 "gcc": executable file not found in %PATH%，
+
+修改
+1. 关于 地址不对
+2. 注释 rss(/rss)，订阅(/subscribe)，Github登录(/auth/:authType)，评论/评论最多(/visitor)
