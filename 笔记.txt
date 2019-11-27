@@ -7,3 +7,5 @@
 修改
 1. 关于 地址不对
 2. 注释 rss(/rss)，订阅(/subscribe)，Github登录(/auth/:authType)，评论/评论最多(/visitor)
+3. 文章列表加阅读数
+4. 修改愽客名称等
