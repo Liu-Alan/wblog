@@ -6,13 +6,14 @@ import (
 	"html/template"
 	"strconv"
 	"time"
+	"wblog/system"
 
 	"github.com/jinzhu/gorm"
-	_ "github.com/mattn/go-sqlite3"
-	//_ "github.com/go-sql-driver/mysql"
+	//_ "github.com/mattn/go-sqlite3"
+	_ "github.com/go-sql-driver/mysql"
+
 	"github.com/microcosm-cc/bluemonday"
 	"github.com/russross/blackfriday"
-	"wblog/system"
 )
 
 // I don't need soft delete,so I use customized BaseModel instead gorm.Model
@@ -26,7 +27,7 @@ type BaseModel struct {
 type Page struct {
 	BaseModel
 	Title       string // title
-	Body        string // body
+	Body        string `sql:"type:text;"` // body
 	View        int    // view count
 	IsPublished bool   // published or not
 }
@@ -35,7 +36,7 @@ type Page struct {
 type Post struct {
 	BaseModel
 	Title        string     // title
-	Body         string     // body
+	Body         string     `sql:"type:text;"` // body
 	View         int        // view count
 	IsPublished  bool       // published or not
 	Tags         []*Tag     `gorm:"-"` // tags of post
@@ -132,12 +133,13 @@ var DB *gorm.DB
 
 func InitDB() (*gorm.DB, error) {
 
-	db, err := gorm.Open("sqlite3", system.GetConfiguration().DSN)
-	//db, err := gorm.Open("mysql", "root:mysql@/wblog?charset=utf8&parseTime=True&loc=Asia/Shanghai")
+	//db, err := gorm.Open("sqlite3", system.GetConfiguration().DSN)
+	db, err := gorm.Open("mysql", system.GetConfiguration().DSN)
 	if err == nil {
 		DB = db
 		//db.LogMode(true)
-		db.AutoMigrate(&Page{}, &Post{}, &Tag{}, &PostTag{}, &User{}, &Comment{}, &Subscriber{}, &Link{}, &SmmsFile{})
+		//db.AutoMigrate(&Page{}, &Post{}, &Tag{}, &PostTag{}, &User{}, &Comment{}, &Subscriber{}, &Link{}, &SmmsFile{})
+		db.Set("gorm:table_options", "CHARSET=utf8mb4").AutoMigrate(&Page{}, &Post{}, &Tag{}, &PostTag{}, &User{}, &Comment{}, &Subscriber{}, &Link{}, &SmmsFile{})
 		db.Model(&PostTag{}).AddUniqueIndex("uk_post_tag", "post_id", "tag_id")
 		return db, err
 	}

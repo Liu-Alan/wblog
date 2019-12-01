@@ -123,6 +123,12 @@
 			"revisionTime": "2017-08-30T04:18:57Z"
 		},
 		{
+			"checksumSHA1": "N7LoCOqfDb/MkcG/G+x7OC7bh6A=",
+			"path": "github.com/go-sql-driver/mysql",
+			"revision": "15462c1d60d42ecca11d6ef9fec0b0afd5833459",
+			"revisionTime": "2019-11-21T06:26:41Z"
+		},
+		{
 			"checksumSHA1": "YpgvTvW1gWqfe/zXQbIl8yF1eHQ=",
 			"path": "github.com/go-yaml/yaml",
 			"revision": "cd8b52f8269e0feb286dfeef29f8fe4d5b397e0b",

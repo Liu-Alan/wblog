@@ -1,11 +1,13 @@
 部署时问题
 1. govendor 使用，设置 path
-2. 由于有包引用golang.org，govendor sync 所以需要翻墙
-3. 代码 头部引用 github.com/wangsongyan/ 批量去掉
-4. go-sqlite3 "gcc": executable file not found in %PATH%，
+2. mysql 5.7替换sqlite3，govendor fetch github.com/go-sql-driver/mysql，loc=Asia/Shanghai改成loc=Local，由于替换成mysql要先建库(CREATE DATABASE wblog CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci)
+3. 由于有包引用golang.org，govendor sync 所以需要翻墙
+4. 代码 头部引用 github.com/wangsongyan/ 批量去掉
+5. go-sqlite3 "gcc": executable file not found in %PATH%
 
 修改
-1. 关于 地址不对
-2. 注释 rss(/rss)，订阅(/subscribe)，Github登录(/auth/:authType)，评论/评论最多(/visitor)
-3. 文章列表加阅读数
-4. 修改愽客名称等
+1. emoji支持utf8mb4修改，Body映射BD为text类型
+2. 关于 地址不对
+3. 注释 rss(/rss)，订阅(/subscribe)，Github登录(/auth/:authType)，评论/评论最多(/visitor)
+4. 文章列表加阅读数
+5. 修改愽客名称等
