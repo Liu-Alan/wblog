@@ -6,15 +6,17 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strconv"
+	"time"
 
-	"github.com/alimoeeny/gooauth2"
+	"wblog/helpers"
+	"wblog/models"
+	"wblog/system"
+
+	oauth "github.com/alimoeeny/gooauth2"
 	"github.com/cihub/seelog"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
 	"github.com/pkg/errors"
-	"wblog/helpers"
-	"wblog/models"
-	"wblog/system"
 )
 
 type GithubUserInfo struct {
@@ -79,6 +81,7 @@ func SignupPost(c *gin.Context) {
 		Telephone: telephone,
 		Password:  password,
 		IsAdmin:   true,
+		OutTime:   time.Now(),
 	}
 	if len(user.Email) == 0 || len(user.Password) == 0 {
 		res["message"] = "email or password cannot be null"
