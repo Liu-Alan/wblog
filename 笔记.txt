@@ -12,8 +12,11 @@
 4. 文章列表加阅读数
 5. 修改愽客名称等
 
-
-
+编译
+windows编译成linux版，vs code终端PowerShell命令
+$env:GOOS="linux"
+go build
+$env:GOOS="windows"
 
 
 
