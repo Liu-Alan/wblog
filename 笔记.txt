@@ -11,7 +11,8 @@
 3. 注释 rss(/rss)，订阅(/subscribe)，Github登录(/auth/:authType)，评论/评论最多(/visitor)
 4. 文章列表加阅读数
 5. 修改愽客名称等
-6. mysql5.7 timestamp类型默认不允许设置为零日期，OutTime:   time.Now(),
+6. mysql5.7 timestamp类型默认不允许设置为零日期，OutTime:   time.Now()
+7. 添加 sitedata 目录，加 sitedata 路由，作为博文图片目录
 
 编译
 windows编译成linux版，vs code终端PowerShell命令

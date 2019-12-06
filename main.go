@@ -57,6 +57,7 @@ func main() {
 	gocron.Start()
 
 	router.Static("/static", filepath.Join(getCurrentDirectory(), "./static"))
+	router.Static("/sitedata", filepath.Join(getCurrentDirectory(), "./sitedata"))
 
 	router.NoRoute(controllers.Handle404)
 	router.GET("/", controllers.IndexGet)
