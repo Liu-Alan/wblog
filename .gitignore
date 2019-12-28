@@ -23,3 +23,4 @@ request.token
 !/vendor/vendor.json
 /*.db
 /wblog
+/关于.txt

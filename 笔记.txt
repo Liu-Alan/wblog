@@ -23,21 +23,3 @@ $env:GOOS="windows"
 
 启动
 nohup ./wblog &
-
-
-
-### **关于本站**
-&emsp;&emsp;这是我的个人愽客，主要用于记录和分享平时工作学习中的一些总结，问题的解决方案和有意义的笔记。  
-### **关于我**
-&emsp;&emsp;湖南人，85后，现居深圳。一直从事软件技术开发和开发团队管理，后期工作更专注开发团队管理，但酷爱技术，工作之余会学习和研究新技术。  
-
-&emsp;&emsp;以前开发主要使用微软技术栈（.Net、Asp.Net、WCF、Sql Server等），2014年.Net Core开源跨平台后，转向.Net Core开源技术栈（.Net Core、Asp.Net Core、Grpc、Mysql、Docker、Nginx、Linux、Consul等），
-后来学习了Go，以后会以开源技术栈为主。  
-
-&emsp;&emsp;业余喜欢爬山、打羽毛球、旅行等。  
-### **关于名字**
-&emsp;&emsp;蜗牛虽然背负着重重的壳，但它象征着努力、坚持、务实、积极向上、不屈不挠、一步一个脚印往上爬的精神。
-### **与我联系**
-&emsp;&emsp;邮件: xiaolin-liu#qq.com  
-&emsp;&emsp;Github: [https://github.com/liu-alan/](https://github.com/liu-alan/)  
-&emsp;&emsp;博客园: [https://www.cnblogs.com/alan-lin/](https://www.cnblogs.com/alan-lin/)  
