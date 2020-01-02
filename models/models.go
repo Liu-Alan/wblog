@@ -359,8 +359,8 @@ func MustListPostArchives() []*QrArchive {
 
 func ListPostArchives() ([]*QrArchive, error) {
 	var archives []*QrArchive
-	//querysql := `select DATE_FORMAT(created_at,'%Y-%m') as month,count(*) as total from posts where is_published = ? group by month order by month desc`
-	querysql := `select strftime('%Y-%m',created_at) as month,count(*) as total from posts where is_published = ? group by month order by month desc`
+	querysql := `select DATE_FORMAT(created_at,'%Y-%m') as month,count(*) as total from posts where is_published = ? group by month order by month desc`
+	//querysql := `select strftime('%Y-%m',created_at) as month,count(*) as total from posts where is_published = ? group by month order by month desc`
 	rows, err := DB.Raw(querysql, true).Rows()
 	if err != nil {
 		return nil, err
@@ -389,12 +389,12 @@ func ListPostByArchive(year, month string, pageIndex, pageSize int) ([]*Post, er
 	}
 	condition := fmt.Sprintf("%s-%s", year, month)
 	if pageIndex > 0 {
-		//querysql := `select * from posts where date_format(created_at,'%Y-%m') = ? and is_published = ? order by created_at desc limit ? offset ?`
-		querysql := `select * from posts where strftime('%Y-%m',created_at) = ? and is_published = ? order by created_at desc limit ? offset ?`
+		querysql := `select * from posts where date_format(created_at,'%Y-%m') = ? and is_published = ? order by created_at desc limit ? offset ?`
+		//querysql := `select * from posts where strftime('%Y-%m',created_at) = ? and is_published = ? order by created_at desc limit ? offset ?`
 		rows, err = DB.Raw(querysql, condition, true, pageSize, (pageIndex-1)*pageSize).Rows()
 	} else {
-		//querysql := `select * from posts where date_format(created_at,'%Y-%m') = ? and is_published = ? order by created_at desc`
-		querysql := `select * from posts where strftime('%Y-%m',created_at) = ? and is_published = ? order by created_at desc`
+		querysql := `select * from posts where date_format(created_at,'%Y-%m') = ? and is_published = ? order by created_at desc`
+		//querysql := `select * from posts where strftime('%Y-%m',created_at) = ? and is_published = ? order by created_at desc`
 		rows, err = DB.Raw(querysql, condition, true).Rows()
 	}
 	if err != nil {
@@ -415,8 +415,8 @@ func CountPostByArchive(year, month string) (count int, err error) {
 		month = "0" + month
 	}
 	condition := fmt.Sprintf("%s-%s", year, month)
-	//querysql := `select count(*) from posts where date_format(created_at,'%Y-%m') = ? and is_published = ? order by created_at desc`
-	querysql := `select count(*) from posts where strftime('%Y-%m',created_at) = ? and is_published = ?`
+	querysql := `select count(*) from posts where date_format(created_at,'%Y-%m') = ? and is_published = ? order by created_at desc`
+	//querysql := `select count(*) from posts where strftime('%Y-%m',created_at) = ? and is_published = ?`
 	err = DB.Raw(querysql, condition, true).Row().Scan(&count)
 	return
 }

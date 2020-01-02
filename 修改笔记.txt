@@ -14,6 +14,7 @@
 6. mysql5.7 timestamp类型默认不允许设置为零日期，OutTime:   time.Now()
 7. 添加 sitedata 目录，加 sitedata 路由，作为博文图片目录
 8. 修改博文正文字体为14px，.markdown-body
+9. 由于DB修改为 mysql5.7，mysql 里没有 strftime 函数，文章归档 查询 strftime('%Y-%m',created_at) 修改为 DATE_FORMAT(created_at,'%Y-%m')
 
 编译
 windows编译成linux版，vs code终端PowerShell命令
