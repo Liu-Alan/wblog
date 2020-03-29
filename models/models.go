@@ -294,7 +294,7 @@ func MustListMaxReadPost() (posts []*Post) {
 }
 
 func ListMaxReadPost() (posts []*Post, err error) {
-	err = DB.Where("is_published = ?", true).Order("view desc").Limit(5).Find(&posts).Error
+	err = DB.Where("is_published = ?", true).Order("view desc").Limit(10).Find(&posts).Error
 	return
 }
 
