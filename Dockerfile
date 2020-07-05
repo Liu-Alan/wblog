@@ -21,7 +21,7 @@ ENTRYPOINT ["./wblog"]
 # docker build -t wblog:v1.0 .
 # docker run -d -p 8090:8090 --name wblog wblog:v1.0
 # docker ps -a
-# docker stop
+# docker start/stop/restart
 # docker rm
 # docker rmi
 # docker inspect
@@ -30,7 +30,7 @@ ENTRYPOINT ["./wblog"]
 # date
 
 
-# 静态文件映射到本地
+# 静态文件映射到宿主机本地
 FROM alpine
 
 WORKDIR /data/www/wblog_docker
