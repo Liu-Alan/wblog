@@ -19,7 +19,7 @@ ENTRYPOINT ["./wblog"]
 
 # docker 常用命令
 # docker build -t wblog:v1.0 .
-# docker run -d -p 8090:8090 --name wblog wblog:v1.0
+# docker run -d -p 8090:8090 --restart always --name wblog wblog:v1.0
 # docker ps -a
 # docker stop
 # docker rm
@@ -46,4 +46,4 @@ EXPOSE 8090
 ENTRYPOINT ["./wblog"]
 
 # docker build -t wblog:v1.0 .
-# docker run -v /data/www/wblog_docker/conf:/wblog/conf -v /data/www/wblog_docker/sitedata:/wblog/sitedata -v /data/www/wblog_docker/static:/wblog/static -v /data/www/wblog_docker/views:/wblog/views -v /data/www/wblog_docker/log:/wblog/log -d -p 8090:8090 --name wblog wblog:v1.0 
+# docker run -v /data/www/wblog_docker/conf:/wblog/conf -v /data/www/wblog_docker/sitedata:/wblog/sitedata -v /data/www/wblog_docker/static:/wblog/static -v /data/www/wblog_docker/views:/wblog/views -v /data/www/wblog_docker/log:/wblog/log -d -p 8090:8090 --restart always --name wblog wblog:v1.0 
