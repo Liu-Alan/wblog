@@ -18,6 +18,7 @@
 
 编译
 windows编译成linux版，vs code终端PowerShell命令
+go env -- 查看环境变量
 $env:GOOS="linux"
 go build
 $env:GOOS="windows"
