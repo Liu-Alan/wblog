@@ -1,27 +1,27 @@
-²¿ÊğÊ±ÎÊÌâ
-1. govendor Ê¹ÓÃ£¬ÉèÖÃ path
-2. mysql 5.7Ìæ»»sqlite3£¬govendor fetch github.com/go-sql-driver/mysql£¬loc=Asia/Shanghai¸Ä³Éloc=Local£¬ÓÉÓÚÌæ»»³ÉmysqlÒªÏÈ½¨¿â(CREATE DATABASE wblog CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci)
-3. ÓÉÓÚÓĞ°üÒıÓÃgolang.org£¬govendor sync ËùÒÔĞèÒª·­Ç½
-4. ´úÂë Í·²¿ÒıÓÃ github.com/wangsongyan/ ÅúÁ¿È¥µô
+éƒ¨ç½²æ—¶é—®é¢˜
+1. govendor ä½¿ç”¨ï¼Œè®¾ç½® path
+2. mysql 5.7æ›¿æ¢sqlite3ï¼Œgovendor fetch github.com/go-sql-driver/mysqlï¼Œloc=Asia/Shanghaiæ”¹æˆloc=Localï¼Œç”±äºæ›¿æ¢æˆmysqlè¦å…ˆå»ºåº“(CREATE DATABASE wblog CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci)
+3. ç”±äºæœ‰åŒ…å¼•ç”¨golang.orgï¼Œgovendor sync æ‰€ä»¥éœ€è¦ç¿»å¢™
+4. ä»£ç  å¤´éƒ¨å¼•ç”¨ github.com/wangsongyan/ æ‰¹é‡å»æ‰
 5. go-sqlite3 "gcc": executable file not found in %PATH%
 
-ĞŞ¸Ä
-1. emojiÖ§³Öutf8mb4ĞŞ¸Ä£¬BodyÓ³ÉäBDÎªtextÀàĞÍ
-2. ¹ØÓÚ µØÖ·²»¶Ô
-3. ×¢ÊÍ rss(/rss)£¬¶©ÔÄ(/subscribe)£¬GithubµÇÂ¼(/auth/:authType)£¬ÆÀÂÛ/ÆÀÂÛ×î¶à(/visitor)
-4. ÎÄÕÂÁĞ±í¼ÓÔÄ¶ÁÊı
-5. ĞŞ¸Äö¿ÍÃû³ÆµÈ
-6. mysql5.7 timestampÀàĞÍÄ¬ÈÏ²»ÔÊĞíÉèÖÃÎªÁãÈÕÆÚ£¬OutTime:   time.Now()
-7. Ìí¼Ó sitedata Ä¿Â¼£¬¼Ó sitedata Â·ÓÉ£¬×÷Îª²©ÎÄÍ¼Æ¬Ä¿Â¼
-8. ĞŞ¸Ä²©ÎÄÕıÎÄ×ÖÌåÎª14px£¬.markdown-body
-9. ÓÉÓÚDBĞŞ¸ÄÎª mysql5.7£¬mysql ÀïÃ»ÓĞ strftime º¯Êı£¬ÎÄÕÂ¹éµµ ²éÑ¯ strftime('%Y-%m',created_at) ĞŞ¸ÄÎª DATE_FORMAT(created_at,'%Y-%m')
+ä¿®æ”¹
+1. emojiæ”¯æŒutf8mb4ä¿®æ”¹ï¼ŒBodyæ˜ å°„BDä¸ºtextç±»å‹
+2. å…³äº åœ°å€ä¸å¯¹
+3. æ³¨é‡Š rss(/rss)ï¼Œè®¢é˜…(/subscribe)ï¼ŒGithubç™»å½•(/auth/:authType)ï¼Œè¯„è®º/è¯„è®ºæœ€å¤š(/visitor)
+4. æ–‡ç« åˆ—è¡¨åŠ é˜…è¯»æ•°
+5. ä¿®æ”¹æ„½å®¢åç§°ç­‰
+6. mysql5.7 timestampç±»å‹é»˜è®¤ä¸å…è®¸è®¾ç½®ä¸ºé›¶æ—¥æœŸï¼ŒOutTime:   time.Now()
+7. æ·»åŠ  sitedata ç›®å½•ï¼ŒåŠ  sitedata è·¯ç”±ï¼Œä½œä¸ºåšæ–‡å›¾ç‰‡ç›®å½•
+8. ä¿®æ”¹åšæ–‡æ­£æ–‡å­—ä½“ä¸º14px .markdown-bodyï¼Œå›¾ç‰‡å¤§å°æ”¹ä¸º 90% .markdown-body img
+9. ç”±äºDBä¿®æ”¹ä¸º mysql5.7ï¼Œmysql é‡Œæ²¡æœ‰ strftime å‡½æ•°ï¼Œæ–‡ç« å½’æ¡£ æŸ¥è¯¢ strftime('%Y-%m',created_at) ä¿®æ”¹ä¸º DATE_FORMAT(created_at,'%Y-%m')
 
-±àÒë
-windows±àÒë³Élinux°æ£¬vs codeÖÕ¶ËPowerShellÃüÁî
-go env -- ²é¿´»·¾³±äÁ¿
+ç¼–è¯‘
+windowsç¼–è¯‘æˆlinuxç‰ˆï¼Œvs codeç»ˆç«¯PowerShellå‘½ä»¤
+go env -- æŸ¥çœ‹ç¯å¢ƒå˜é‡
 $env:GOOS="linux"
 go build
 $env:GOOS="windows"
 
-Æô¶¯
+å¯åŠ¨
 nohup ./wblog &
