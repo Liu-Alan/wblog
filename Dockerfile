@@ -1,13 +1,12 @@
-# 文件全部打包
+# 方式一：文件全部打包
 FROM alpine
 
-WORKDIR /data/www/wblog_docker
+WORKDIR /wblog
 COPY wblog /wblog/
 COPY conf/ /wblog/conf/
 COPY sitedata/ /wblog/sitedata/
 COPY static/ /wblog/static/
 COPY views/ /wblog/views/
-WORKDIR /wblog
 
 RUN apk add -U tzdata
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
@@ -30,12 +29,11 @@ ENTRYPOINT ["./wblog"]
 # date
 
 
-# 静态文件映射到宿主机本地
+# 方式二：静态文件映射到宿主机本地
 FROM alpine
 
-WORKDIR /data/www/wblog_docker
-COPY wblog /wblog/
 WORKDIR /wblog
+COPY wblog /wblog/
 
 RUN apk add -U tzdata
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
